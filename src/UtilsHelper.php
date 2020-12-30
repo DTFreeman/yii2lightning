@@ -36,4 +36,28 @@ class UtilsHelper
     {
         return Yii::$app->getResponse();
     }
+
+    /**
+     * @return \yii\base\Security
+     */
+    public static function getSecurity()
+    {
+        return Yii::$app->getSecurity();
+    }
+
+    /**
+     * @return \yii\web\Session
+     */
+    public static function getSession()
+    {
+        return Yii::$app->getSession();
+    }
+
+    /**
+     * @return \Redis
+     */
+    public static function getRedis()
+    {
+        return Yii::$app->getRedis();
+    }
 }
