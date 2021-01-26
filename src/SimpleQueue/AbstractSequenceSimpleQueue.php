@@ -44,7 +44,7 @@ abstract class AbstractSequenceSimpleQueue extends AbstractSimpleQueue
      * 队列长度
      * @return int
      */
-    public function length(): int
+    public function size(): int
     {
         return UtilsHelper::getRedis()->llen(static::key());
     }

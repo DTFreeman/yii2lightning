@@ -36,7 +36,7 @@ abstract class AbstractSimpleQueue
 
     abstract public function dequeue();
 
-    abstract public function length(): int;
+    abstract public function size(): int;
 
     /**
      * 设置编码器,将数据编码存入redis,或将取出的数据解码
