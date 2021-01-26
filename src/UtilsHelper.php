@@ -58,6 +58,6 @@ class UtilsHelper
      */
     public static function getRedis()
     {
-        return Yii::$app->getRedis();
+        return Yii::$app->get('redis');
     }
 }
