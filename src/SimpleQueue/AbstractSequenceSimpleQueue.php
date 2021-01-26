@@ -22,7 +22,7 @@ abstract class AbstractSequenceSimpleQueue extends AbstractSimpleQueue
         if ($this->encoder instanceof EncoderInterface) {
             $data = $this->encoder->encode($data);
         }
-        return UtilsHelper::getRedis()->lPush(static::key(), $data);
+        return UtilsHelper::getRedis()->lpush(static::key(), $data);
     }
 
     /**
@@ -30,7 +30,7 @@ abstract class AbstractSequenceSimpleQueue extends AbstractSimpleQueue
      */
     public function dequeue()
     {
-        $data = UtilsHelper::getRedis()->rPop(static::key());
+        $data = UtilsHelper::getRedis()->rpop(static::key());
         if ($data === FALSE) {
             return $data;
         }
@@ -46,6 +46,6 @@ abstract class AbstractSequenceSimpleQueue extends AbstractSimpleQueue
      */
     public function length(): int
     {
-        return UtilsHelper::getRedis()->lLen(static::key());
+        return UtilsHelper::getRedis()->llen(static::key());
     }
 }
