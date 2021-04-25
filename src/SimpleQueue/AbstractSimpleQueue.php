@@ -64,7 +64,7 @@ abstract class AbstractSimpleQueue
      */
     public function clear()
     {
-        return UtilsHelper::getRedis()->del(static::key());
+        return UtilsHelper::getKeepaliveRedis()->del(static::key());
     }
 
 }

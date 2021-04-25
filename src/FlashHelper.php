@@ -1,4 +1,5 @@
 <?php
+
 namespace qwenode\yii2lightning;
 
 
@@ -19,7 +20,7 @@ class FlashHelper
         \Yii::$app->session->setFlash('error', static::getFirstMessage($message, $params));
     }
 
-    public static function getFirstMessage($messages, $params)
+    public static function arrayMessagesToString($messages)
     {
         $message = '';
 
@@ -30,9 +31,28 @@ class FlashHelper
         } else {
             $message = $messages;
         }
-        foreach ($params as $k => $v) {
-            $message = str_replace('{' . $k . '}', $v, $message);
+        return $message;
+    }
+
+    public static function getFirstMessage($messages, $params)
+    {
+        $message = self::arrayMessagesToString($messages);
+        if (strpos($message, '{0}') !== FALSE) {
+            foreach ($params as $k => $v) {
+                $message = str_replace('{' . $k . '}', $v, $message);
+            }
+        } else {
+            $explode = explode('{}', $message);
+            $newMsg = '';
+            foreach ($explode as $k => $value) {
+                $newMsg .= $value;
+                if (isset($params[$k])) {
+                    $newMsg .= $params[$k];
+                }
+            }
+            $message = $newMsg;
         }
+
         return $message;
     }
 }
