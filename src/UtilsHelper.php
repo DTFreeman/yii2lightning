@@ -56,7 +56,7 @@ class UtilsHelper
     }
 
     /**
-     * @return \Redis
+     * @return \Redis|Connection
      */
     public static function getRedis()
     {
@@ -83,7 +83,7 @@ class UtilsHelper
 
     /**
      * 此方法会检查链接可用性并自动重连
-     * @return \Redis
+     * @return \Redis|Connection
      * @throws \yii\db\Exception
      * @throws \yii\base\InvalidConfigException
      */
