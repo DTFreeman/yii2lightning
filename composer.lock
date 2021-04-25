@@ -1,20 +1,20 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "bc2a6c5d7f7db636c567b0aae4622bf0",
-    "packages": [
-        {
-            "name": "bower-asset/inputmask",
-            "version": "3.3.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
-                "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
-            },
-            "dist": {
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "f950171d9ee0eec7a81cc512f313e969",
+  "packages": [
+    {
+      "name": "bower-asset/inputmask",
+      "version": "3.3.11",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/RobinHerbots/Inputmask.git",
+        "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
+      },
+      "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5e670ad62f50c738388d4dcec78d2888505ad77b",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b",
@@ -284,26 +284,26 @@
             ],
             "time": "2020-06-29T00:56:53+00:00"
         },
-        {
-            "name": "yiisoft/yii2",
-            "version": "2.0.37",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e8094d1aa9e807fbea970bc1360ab836ffb1b738",
-                "reference": "e8094d1aa9e807fbea970bc1360ab836ffb1b738",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
+    {
+      "name": "yiisoft/yii2",
+      "version": "2.0.41.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/yiisoft/yii2-framework.git",
+        "reference": "2ad0894a2ccbd3912b33de4419ad1ae3df0595c4"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2ad0894a2ccbd3912b33de4419ad1ae3df0595c4",
+        "reference": "2ad0894a2ccbd3912b33de4419ad1ae3df0595c4",
+        "shasum": "",
+        "mirrors": [
+          {
+            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+            "preferred": true
+          }
+        ]
+      },
             "require": {
                 "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
                 "bower-asset/jquery": "3.5.*@stable | 3.4.*@stable | 3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
@@ -378,18 +378,32 @@
                 {
                     "name": "Boudewijn Vahrmeijer",
                     "email": "info@dynasource.eu",
-                    "homepage": "http://dynasource.eu",
-                    "role": "Core framework development"
+                  "homepage": "http://dynasource.eu",
+                  "role": "Core framework development"
                 }
             ],
-            "description": "Yii PHP Framework Version 2",
-            "homepage": "http://www.yiiframework.com/",
-            "keywords": [
-                "framework",
-                "yii2"
-            ],
-            "time": "2020-08-07T20:11:56+00:00"
+      "description": "Yii PHP Framework Version 2",
+      "homepage": "http://www.yiiframework.com/",
+      "keywords": [
+        "framework",
+        "yii2"
+      ],
+      "funding": [
+        {
+          "url": "https://github.com/yiisoft",
+          "type": "github"
         },
+        {
+          "url": "https://opencollective.com/yiisoft",
+          "type": "open_collective"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2021-03-04T15:45:04+00:00"
+    },
         {
             "name": "yiisoft/yii2-composer",
             "version": "2.0.10",
@@ -443,21 +457,138 @@
                     "email": "mail@cebe.cc"
                 }
             ],
-            "description": "The composer plugin for Yii extension installer",
-            "keywords": [
-                "composer",
-                "extension installer",
-                "yii2"
-            ],
-            "time": "2020-06-24T00:04:01+00:00"
+          "description": "The composer plugin for Yii extension installer",
+          "keywords": [
+            "composer",
+            "extension installer",
+            "yii2"
+          ],
+          "time": "2020-06-24T00:04:01+00:00"
         }
-    ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+  ],
+  "packages-dev": [
+    {
+      "name": "yidas/yii2-composer-bower-skip",
+      "version": "2.0.13",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/yidas/yii2-composer-bower-skip.git",
+        "reference": "1156ed4dc2ddca811bd2582d09e8885585fbd0cb"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/yidas/yii2-composer-bower-skip/zipball/1156ed4dc2ddca811bd2582d09e8885585fbd0cb",
+        "reference": "1156ed4dc2ddca811bd2582d09e8885585fbd0cb",
+        "shasum": "",
+        "mirrors": [
+          {
+            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+            "preferred": true
+          }
+        ]
+      },
+      "provide": {
+        "bower-asset/bootstrap": "*",
+        "bower-asset/inputmask": "*",
+        "bower-asset/jquery": "*",
+        "bower-asset/punycode": "*",
+        "bower-asset/typeahead.js": "*",
+        "bower-asset/yii2-pjax": "*"
+      },
+      "type": "yii2-extension",
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "description": "A Composer package that allows you to install or update Yii2 without Bower-Asset",
+      "keywords": [
+        "bower",
+        "bower asset",
+        "framework",
+        "yii2"
+      ],
+      "time": "2017-11-03T06:28:14+00:00"
+    },
+    {
+      "name": "yiisoft/yii2-redis",
+      "version": "2.0.14",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/yiisoft/yii2-redis.git",
+        "reference": "1cbc7b2138ec9b6ffdc08929f8dc1f41848596aa"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/yiisoft/yii2-redis/zipball/1cbc7b2138ec9b6ffdc08929f8dc1f41848596aa",
+        "reference": "1cbc7b2138ec9b6ffdc08929f8dc1f41848596aa",
+        "shasum": "",
+        "mirrors": [
+          {
+            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+            "preferred": true
+          }
+        ]
+      },
+      "require": {
+        "ext-openssl": "*",
+        "yiisoft/yii2": "~2.0.39"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "<7",
+        "yiisoft/yii2-dev": "~2.0.39"
+      },
+      "type": "yii2-extension",
+      "extra": {
+        "branch-alias": {
+          "dev-master": "2.0.x-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "yii\\redis\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "BSD-3-Clause"
+      ],
+      "authors": [
+        {
+          "name": "Carsten Brandt",
+          "email": "mail@cebe.cc"
+        }
+      ],
+      "description": "Redis Cache, Session and ActiveRecord for the Yii framework",
+      "keywords": [
+        "active-record",
+        "cache",
+        "redis",
+        "session",
+        "yii2"
+      ],
+      "funding": [
+        {
+          "url": "https://github.com/yiisoft",
+          "type": "github"
+        },
+        {
+          "url": "https://opencollective.com/yiisoft",
+          "type": "open_collective"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-redis",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2020-11-10T11:53:29+00:00"
+    }
+  ],
+  "aliases": [],
+  "minimum-stability": "stable",
+  "stability-flags": [],
+  "prefer-stable": false,
+  "prefer-lowest": false,
+  "platform": [],
+  "platform-dev": [],
+  "plugin-api-version": "1.1.0"
 }

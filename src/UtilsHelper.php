@@ -4,6 +4,8 @@
 namespace qwenode\yii2lightning;
 
 use Yii;
+use yii\redis\Connection;
+use yii\redis\SocketException;
 
 /**
  * 所有Yii快捷访问方式,工具集合等
@@ -59,5 +61,47 @@ class UtilsHelper
     public static function getRedis()
     {
         return Yii::$app->get('redis');
+    }
+
+    /**
+     * 此方法会检查链接可用性并自动重连
+     * @return \yii\db\Connection
+     * @throws \yii\db\Exception
+     */
+    public static function getKeepaliveDb()
+    {
+        $connection = Yii::$app->getDb();
+        try {
+            $connection->createCommand('select 1')->execute();
+            return $connection;
+        } catch (\Exception $exception) {
+            $connection->close();
+            $connection->open();
+        }
+        throw new \Exception('database reconnect fail.');
+    }
+
+    /**
+     * 此方法会检查链接可用性并自动重连
+     * @return \Redis
+     * @throws \yii\db\Exception
+     * @throws \yii\base\InvalidConfigException
+     */
+    public static function getKeepaliveRedis()
+    {
+        /**
+         * @var $redis Connection
+         */
+        $redis = Yii::$app->get('redis');
+        try {
+            //检测链接可用性
+            $redis->set('KEEPALIVE', 1);
+            return $redis;
+        } catch (\Exception $exception) {
+            //重连
+            $redis->close();
+            $redis->open();
+        }
+        throw new SocketException('redis reconnect fail.');
     }
 }
