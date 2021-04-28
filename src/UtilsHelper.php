@@ -24,6 +24,22 @@ class UtilsHelper
     }
 
     /**
+     * @return \yii\console\Application|\yii\web\Application
+     */
+    public static function getApplication()
+    {
+        return Yii::$app;
+    }
+
+    /**
+     * @return \yii\web\User
+     */
+    public static function getUser()
+    {
+        return Yii::$app->getUser();
+    }
+
+    /**
      * @return \yii\console\Request|\yii\web\Request
      */
     public static function getRequest()
