@@ -40,6 +40,14 @@ class UtilsHelper
     }
 
     /**
+     * @return int|string|null
+     */
+    public static function getCurrentUserID()
+    {
+        return static::getUser()->getId();
+    }
+
+    /**
      * @return \yii\console\Request|\yii\web\Request
      */
     public static function getRequest()
