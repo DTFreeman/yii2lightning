@@ -3,17 +3,15 @@
 
 namespace qwenode\yii2lightning;
 
-use Yii;
+
 use yii\redis\Connection;
-use yii\redis\SocketException;
 
 /**
  * 所有Yii快捷访问方式,工具集合等
- * Class UtilsHelper
+ * Class LightningHelper
  * @package qwenode\yii2lightning
- * @deprecated 已改名为 qwenode\LightningHelper,请不要再使用
  */
-class UtilsHelper
+class LightningHelper
 {
     /**
      * @param string $anchor
@@ -21,7 +19,7 @@ class UtilsHelper
      */
     public static function refresh($anchor = '')
     {
-        return Yii::$app->response->refresh($anchor);
+        return \Yii::$app->response->refresh($anchor);
     }
 
     /**
@@ -40,7 +38,7 @@ class UtilsHelper
      */
     public static function getApplication()
     {
-        return Yii::$app;
+        return \Yii::$app;
     }
 
 
@@ -49,7 +47,7 @@ class UtilsHelper
      */
     public static function getUser()
     {
-        return Yii::$app->getUser();
+        return \Yii::$app->getUser();
     }
 
     /**
@@ -65,7 +63,7 @@ class UtilsHelper
      */
     public static function getRequest()
     {
-        return Yii::$app->getRequest();
+        return \Yii::$app->getRequest();
     }
 
     /**
@@ -73,7 +71,7 @@ class UtilsHelper
      */
     public static function getResponse()
     {
-        return Yii::$app->getResponse();
+        return \Yii::$app->getResponse();
     }
 
     /**
@@ -81,7 +79,7 @@ class UtilsHelper
      */
     public static function getSecurity()
     {
-        return Yii::$app->getSecurity();
+        return \Yii::$app->getSecurity();
     }
 
     /**
@@ -89,7 +87,7 @@ class UtilsHelper
      */
     public static function getSession()
     {
-        return Yii::$app->getSession();
+        return \Yii::$app->getSession();
     }
 
     /**
@@ -97,7 +95,7 @@ class UtilsHelper
      */
     public static function getRedis()
     {
-        return Yii::$app->get('redis');
+        return \Yii::$app->get('redis');
     }
 
     /**
@@ -107,7 +105,7 @@ class UtilsHelper
      */
     public static function getKeepaliveDb()
     {
-        $connection = Yii::$app->getDb();
+        $connection = \Yii::$app->getDb();
         try {
             $connection->createCommand('select 1')->execute();
             return $connection;
@@ -129,7 +127,7 @@ class UtilsHelper
         /**
          * @var $redis Connection
          */
-        $redis = Yii::$app->get('redis');
+        $redis = \Yii::$app->get('redis');
         try {
             //检测链接可用性
             $redis->set('KEEPALIVE', 1);

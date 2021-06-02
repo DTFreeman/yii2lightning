@@ -4,7 +4,7 @@
 namespace qwenode\yii2lightning\SimpleQueue;
 
 
-use qwenode\yii2lightning\UtilsHelper;
+use qwenode\yii2lightning\LightningHelper;
 
 /**
  * 随机出栈队列
@@ -22,7 +22,7 @@ abstract class AbstractRandomSimpleQueue extends AbstractSimpleQueue
         if ($this->encoder instanceof EncoderInterface) {
             $data = $this->encoder->encode($data);
         }
-        return UtilsHelper::getKeepaliveRedis()->sadd(static::key(), $data);
+        return LightningHelper::getKeepaliveRedis()->sadd(static::key(), $data);
     }
 
     /**
@@ -30,7 +30,7 @@ abstract class AbstractRandomSimpleQueue extends AbstractSimpleQueue
      */
     public function dequeue()
     {
-        $data = UtilsHelper::getKeepaliveRedis()->spop(static::key());
+        $data = LightningHelper::getKeepaliveRedis()->spop(static::key());
         if ($data === FALSE) {
             return $data;
         }
@@ -46,7 +46,7 @@ abstract class AbstractRandomSimpleQueue extends AbstractSimpleQueue
      */
     public function size(): int
     {
-        return UtilsHelper::getKeepaliveRedis()->scard(static::key());
+        return LightningHelper::getKeepaliveRedis()->scard(static::key());
     }
 
 }

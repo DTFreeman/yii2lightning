@@ -19,7 +19,7 @@ class JsonEncoder implements EncoderInterface
      */
     public function encode($data)
     {
-        return json_encode($data);
+        return \json_encode($data);
     }
 
     /**
@@ -29,6 +29,6 @@ class JsonEncoder implements EncoderInterface
      */
     public function decode($data)
     {
-        return json_decode($data, TRUE);
+        return \json_decode($data, TRUE);
     }
 }

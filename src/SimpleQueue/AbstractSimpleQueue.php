@@ -3,7 +3,8 @@
 
 namespace qwenode\yii2lightning\SimpleQueue;
 
-use qwenode\yii2lightning\UtilsHelper;
+
+use qwenode\yii2lightning\LightningHelper;
 
 /**
  * Class AbstractSimpleQueue
@@ -64,7 +65,7 @@ abstract class AbstractSimpleQueue
      */
     public function clear()
     {
-        return UtilsHelper::getKeepaliveRedis()->del(static::key());
+        return LightningHelper::getKeepaliveRedis()->del(static::key());
     }
 
 }
