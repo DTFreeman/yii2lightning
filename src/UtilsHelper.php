@@ -24,6 +24,17 @@ class UtilsHelper
     }
 
     /**
+     * 跳转到上一页
+     * @param null $errorMessage 错误消息
+     * @return \yii\web\Response
+     */
+    public static function returnPreviousPage($errorMessage = NULL)
+    {
+        FlashHelper::error($errorMessage);
+        return self::getResponse()->redirect(self::getRequest()->getReferrer());
+    }
+
+    /**
      * @return \yii\console\Application|\yii\web\Application
      */
     public static function getApplication()
