@@ -38,6 +38,15 @@ class LightningHelper
     }
 
     /**
+     * get default database connection
+     * @return \yii\db\Connection
+     */
+    public static function getDb()
+    {
+        return self::getApplication()->getDb();
+    }
+
+    /**
      * @return \yii\console\Application|\yii\web\Application
      */
     public static function getApplication()
