@@ -30,7 +30,11 @@ class LightningHelper
     public static function returnPreviousPage($errorMessage = NULL)
     {
         FlashHelper::error($errorMessage);
-        return self::getResponse()->redirect(self::getRequest()->getReferrer());
+        $referrer = self::getRequest()->getReferrer();
+        if ($referrer == '') {
+            $referrer = '/';
+        }
+        return self::getResponse()->redirect($referrer);
     }
 
     /**
