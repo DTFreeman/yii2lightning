@@ -27,10 +27,14 @@ class FlashHelper
         if (is_array($messages)) {
             if (count($messages) != 0) {
                 $message = array_values($messages)[0];
+                if (is_array($message)) {
+                    $message = self::arrayMessagesToString($message);
+                }
             }
         } else {
             $message = $messages;
         }
+
         return $message;
     }
 
