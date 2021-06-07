@@ -51,7 +51,7 @@ class FlashHelper
             foreach ($explode as $k => $value) {
                 $newMsg .= $value;
                 if (isset($params[$k])) {
-                    $newMsg .= $params[$k];
+                    $newMsg .= self::arrayMessagesToString($params[$k]);
                 }
             }
             $message = $newMsg;
