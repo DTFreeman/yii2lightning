@@ -22,6 +22,15 @@ class LightningHelper
         return \Yii::$app->response->refresh($anchor);
     }
 
+    public static function getReturnUrl()
+    {
+        $referrer = self::getRequest()->getReferrer();
+        if ($referrer == '') {
+            $referrer = '/';
+        }
+        return $referrer;
+    }
+
     /**
      * 跳转到上一页
      * @param null $errorMessage 错误消息
@@ -30,11 +39,7 @@ class LightningHelper
     public static function returnPreviousPage($errorMessage = NULL)
     {
         FlashHelper::error($errorMessage);
-        $referrer = self::getRequest()->getReferrer();
-        if ($referrer == '') {
-            $referrer = '/';
-        }
-        return self::getResponse()->redirect($referrer);
+        return self::getResponse()->redirect(self::getReturnUrl());
     }
 
     /**
