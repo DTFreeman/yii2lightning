@@ -77,6 +77,16 @@ class LightningHelper
     }
 
     /**
+     * @param bool $autoRenew
+     * @return bool|\yii\web\IdentityInterface|null
+     * @throws \Throwable
+     */
+    public static function getUserIdentity($autoRenew = TRUE)
+    {
+        return static::getUser()->getIdentity($autoRenew);
+    }
+
+    /**
      * @return \yii\console\Request|\yii\web\Request
      */
     public static function getRequest()
