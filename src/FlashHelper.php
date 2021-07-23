@@ -3,6 +3,8 @@
 namespace qwenode\yii2lightning;
 
 
+use yii\base\Model;
+
 class FlashHelper
 {
     public static function info($message, ...$params)
@@ -20,8 +22,15 @@ class FlashHelper
         \Yii::$app->session->setFlash('error', static::getFirstMessage($message, $params));
     }
 
+    /**
+     * @param array|Model|string $messages
+     * @return array|mixed|string
+     */
     public static function arrayMessagesToString($messages)
     {
+        if ($messages instanceof Model) {
+            $messages = $messages->getFirstErrors();
+        }
         $message = '';
 
         if (is_array($messages)) {
