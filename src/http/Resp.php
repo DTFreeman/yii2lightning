@@ -6,7 +6,11 @@ namespace qwenode\yii2lightning\http;
 
 class Resp
 {
-    public static function data(array $data)
+    /**
+     * @param array|mixed $data
+     * @return array
+     */
+    public static function data($data)
     {
         return [
             'code' => 1,
