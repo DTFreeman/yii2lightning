@@ -52,6 +52,15 @@ class LightningHelper
     }
 
     /**
+     * get default cache connection
+     * @return \yii\caching\CacheInterface
+     */
+    public static function getCache()
+    {
+        return self::getApplication()->getCache();
+    }
+
+    /**
      * @return \yii\console\Application|\yii\web\Application
      */
     public static function getApplication()
