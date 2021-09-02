@@ -52,6 +52,19 @@ class LightningHelper
     }
 
     /**
+     * quick call: Yii::$app->db->cache()
+     * @param callable $callable
+     * @param null $duration
+     * @param null $dependency
+     * @return mixed
+     * @throws \Throwable
+     */
+    public static function withDbCache(callable $callable, $duration = null, $dependency = null)
+    {
+        return self::getApplication()->getDb()->cache($callable, $duration, $dependency);
+    }
+
+    /**
      * get default cache connection
      * @return \yii\caching\CacheInterface
      */
