@@ -52,11 +52,17 @@ class ModelHelper
      */
     public static function throwIfNull($model, $message = null)
     {
+        if ($message == null) {
+            $message = '数据不存在';
+        }
         if ($model == null) {
-            throw new ErrorException($message != null ?? '数据不存在');
+            throw new ErrorException($message);
+        }
+        if ($message == '数据不存在') {
+            $message = '对象必须继承Model';
         }
         if (!($model instanceof Model)) {
-            throw new ErrorException($message != null ?? '对象必须继承Model');
+            throw new ErrorException($message);
         }
     }
 
