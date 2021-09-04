@@ -46,6 +46,21 @@ class ModelHelper
     }
 
     /**
+     *
+     * @param $model
+     * @throws ErrorException
+     */
+    public static function throwIfNull($model)
+    {
+        if ($model == null) {
+            throw new ErrorException('数据不存在');
+        }
+        if (!($model instanceof Model)) {
+            throw new ErrorException('对象必须继承Model');
+        }
+    }
+
+    /**
      * @param $model
      * @param $property
      * @return mixed|string
