@@ -5,6 +5,7 @@ namespace qwenode\yii2lightning\SimpleQueue;
 
 
 use qwenode\yii2lightning\LightningHelper;
+use qwenode\yii2lightning\SimpleQueue\encoder\JsonEncoder;
 
 /**
  * Class AbstractSimpleQueue
@@ -30,7 +31,9 @@ abstract class AbstractSimpleQueue
      */
     public static function newInstance()
     {
-        return new static();
+        $abstractSimpleQueue = new static();
+        $abstractSimpleQueue->withEncoder(new JsonEncoder());
+        return $abstractSimpleQueue;
     }
 
     abstract public function enqueue($data): bool;
